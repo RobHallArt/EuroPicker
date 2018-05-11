@@ -5,7 +5,7 @@ var title, countryTitle, countryDesc, countryImg, countryVid, countryLastWin, co
 var flagEmoji = [10];
 
 var countries = [
-  {name: "Ukraine", desc: "Got annexed innit", img: null, lastWin: null, flag: "🇺🇦"}
+  {name: "Ukraine", desc: "Got annexed innit", img: null, lastWin: null, flag: "🇺🇦"},
   {name: "Spain", desc: "Just english people", img: null, lastWin: null, flag: "🇪🇸"}
 ]
 
@@ -20,6 +20,7 @@ function setup(){
 function draw(){
 
   console.log("🇪🇸");
+  createP("🇪🇸").position(100,100);
 
 }
 
@@ -33,7 +34,7 @@ function flag(){
   this.draw = function(){
 
     this.physics();
-    text(this.position.x,this.position.y,this.size,this.size,countries[this.country].flag);
+    //text(this.position.x,this.position.y,this.size,this.size,countries[this.country].flag);
 
   }
 
