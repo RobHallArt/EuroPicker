@@ -2,55 +2,39 @@
 // create vars for elements
 
 var title, countryTitle, countryDesc, countryImg, countryVid, countryLastWin, countryOrder, countryFlag;
-var textScrollers = [10];
+var flagEmoji = [10];
 
+var countries = [
+  {name: "Ukraine", desc: "Got annexed innit", img: null, lastWin: null, flag: "🇺🇦"}
+  {name: "Spain", desc: "Just english people", img: null, lastWin: null, flag: "🇪🇸"}
+]
 
 
 
 function setup(){
 
 
+
 }
 
 function draw(){
-  scrollTextUpdate();
+
+  console.log("🇪🇸");
+
 }
 
-function onMouseDown(){
-  scrollTextInit("WORDS");
-}
+function flag(){
 
-function scrollTextInit(message){
-    for(var i = 0; i<textScrollers.length; i++){
-        if(textScrollers[i] == null){
-            console.log("1");
-            textScrollers[i] = {message: message, posx: 0-(message.length*60), posy: random(innerHeight-100)};
-            textScrollers[i].element = createElement('h1',message);
-            textScrollers[i].element.position(textScrollers[i].posx,textScrollers[i].posy);
-            textScrollers[i].element.style('font-family','sans-serif');
-            textScrollers[i].element.style('font-size','72pt');
-            return true;
-        }
-    }
-    console.log("2");
-    var newScroller = textScrollers.length;
-    textScrollers[newScroller] = {message: message, posx: 0-(message.length*60), posy: random(innerHeight-100)};
-    textScrollers[newScroller].element = createElement('h1',message);
-    textScrollers[newScroller].element.position(textScrollers[newScroller].posx,textScrollers[newScroller].posy);
-    textScrollers[newScroller].element.style('font-family','sans-serif');
-    textScrollers[newScroller].element.style('font-size','72pt');
-}
+  this.position = createVector(width/2, height/2);
+  this.country = random(0,25);
+  this.speed = random(0.5,1.5);
+  this.size = 10;
 
-function scrollTextUpdate(){
-    for(var i = 0; i<textScrollers.length; i++){
-        if(textScrollers[i] != null){
-            if(textScrollers[i].posx>innerWidth){
-                textScrollers[i].element.remove();
-                textScrollers[i] = null;
-            } else {
-                textScrollers[i].element.position(textScrollers[i].posx,textScrollers[i].posy);
-                textScrollers[i].posx+=2;
-            }
-        }
-    }
+  this.draw = function(){
+
+    this.physics();
+    text(this.position.x,this.position.y,this.size,this.size,countries[this.country].flag);
+
+  }
+
 }
