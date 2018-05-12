@@ -8,184 +8,210 @@ var countryFromCookie;
 var countries = [{
     name: "Ukraine",
     desc: "Got annexed innit",
-    img: null,
-    lastWin: null,
-    flag: "🇺🇦"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2016,
+    flag: "🇺🇦",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Spain",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇪🇸"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1969,
+    flag: "🇪🇸",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Slovenia",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇸🇮"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇸🇮",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Lithuania",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇱🇹"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇱🇹",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Austria",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇦🇹"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2014,
+    flag: "🇦🇹",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Estonia",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇪🇪"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2001,
+    flag: "🇪🇪",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Norway",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇳🇴"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2009,
+    flag: "🇳🇴",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Portugal",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇵🇹"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2017,
+    flag: "🇵🇹",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "United Kingdom",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇬🇧"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1997,
+    flag: "🇬🇧",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Serbia",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇷🇸"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2007,
+    flag: "🇷🇸",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Germany",
-    desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇩🇪"
+    desc: "Interestingly also won in 82 as west germany!",
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2010,
+    flag: "🇩🇪",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Albania",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇦🇱"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇦🇱",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "France",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇫🇷"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1977,
+    flag: "🇫🇷",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Czech Republic",
-    desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇨🇿"
+    desc: "Best : 25th, in 2016",
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇨🇿",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Denmark",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇩🇰"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2013,
+    flag: "🇩🇰",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Australia",
-    desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇦🇺"
+    desc: "Came 2nd in 2016, only been here since 2015",
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇦🇺",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Finland",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇫🇮"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2006,
+    flag: "🇫🇮",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Bulgaria",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇧🇬"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇧🇬",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Moldova",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇲🇩"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇲🇩",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Sweden",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇸🇪"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 2015,
+    flag: "🇸🇪",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Hungary",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇭🇺"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇭🇺",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Israel",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇮🇱"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1998,
+    flag: "🇮🇱",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "The Netherlands",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇳🇱"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1975,
+    flag: "🇳🇱",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Ireland",
-    desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇮🇪"
+    desc: "They won a bunch in the 90s but have come last in the noughties",
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1996,
+    flag: "🇮🇪",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Cyprus",
     desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇨🇾"
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: "Never",
+    flag: "🇨🇾",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   },
   {
     name: "Italy",
-    desc: "Just english people",
-    img: null,
-    lastWin: null,
-    flag: "🇮🇹"
+    desc: "Last year was a banger!",
+    img: "https://emerging-europe.com/wp-content/uploads/2016/11/bigstock-140187299-1024x682.jpg",
+    lastWin: 1990,
+    flag: "🇮🇹",
+    vid: "https://www.youtube.com/embed/DJ9ajcic9fI"
   }
 ]
 
@@ -299,22 +325,27 @@ function setHTML(_scene) {
   }
 
   if (_scene == "countryData") {
+    countryDiv = createDiv('');
+    countryDiv.id('countryDiv');
+    countryDiv.style("text-align","center");
     countryTitle = createElement("h1", countries[countryFromCookie].name);
     countryTitle.style("font-family", "sans-serif");
     countryTitle.style("text-align", "center");
     countryTitle.style("font-size", "64px");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
-    countryTitle.style("font-family", "sans-serif");
-    countryTitle.style("text-align", "center");
-    countryTitle.style("font-size", "64px");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
-    countryTitle.style("font-family", "sans-serif");
-    countryTitle.style("text-align", "center");
-    countryTitle.style("font-size", "64px");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
-    countryTitle.style("font-family", "sans-serif");
-    countryTitle.style("text-align", "center");
-    countryTitle.style("font-size", "64px");
+    countryTitle.parent('countryDiv');
+    countryImg = createImg(countries[countryFromCookie].img);
+    countryImg.style("text-align", "center");
+    countryImg.parent('countryDiv');
+    countryLastWin = createElement("p", countries[countryFromCookie].lastWin);
+    countryLastWin.style("font-family", "sans-serif");
+    countryLastWin.style("text-align", "center");
+    countryLastWin.style("font-size", "64px");
+    countryLastWin.style("float", "left");
+    countryOrder = createElement("p", countryFromCookie+1);
+    countryOrder.style("font-family", "sans-serif");
+    countryOrder.style("text-align", "center");
+    countryOrder.style("font-size", "64px");
+    countryOrder.style("float", "right");
     countryTitle = createElement("h1", countries[countryFromCookie].name);
     countryTitle.style("font-family", "sans-serif");
     countryTitle.style("text-align", "center");
