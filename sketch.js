@@ -193,10 +193,10 @@ var countries = [{
 
 function setup() {
 
-  if (document.cookie != null) {
+  if (document.cookie != "") {
     countryFromCookie = document.cookie;
   } else {
-    countryFromCookie = random(0, countries.size());
+    countryFromCookie = Math.floor(Math.random() * 25);
     document.cookie = countryFromCookie;
   }
 
@@ -288,7 +288,7 @@ function setHTML(_scene) {
   }
 
   if (_scene == "countryData") {
-     countryTitle = createElement("h1", countries[5].name );
+     countryTitle = createElement("h1", countries[countryFromCookie].name );
   }
 }
 
