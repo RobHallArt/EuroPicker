@@ -2,7 +2,7 @@
 
 var title, countryTitle, countryDesc, countryImg, countryVid, countryLastWin, countryOrder, countryFlag, bigButton;
 var flagEmoji = [];
-
+var startDiv;
 var countryFromCookie;
 
 var countries = [{
@@ -202,8 +202,8 @@ function setup() {
 
   setHTML("chooseButton");
 
-  for (var i = 0; i < 100; i++) {
-    flagEmoji.push(new flag(innerWidth / 2, innerHeight / 2));
+  for (var i = 0; i < 300; i++) {
+    flagEmoji.push(new flag(innerWidth / 2, 200,10));
   }
 
 
@@ -225,17 +225,22 @@ function draw() {
 
 function touchStarted() {
   for (var i = 0; i < 50; i++) {
-    flagEmoji.push(new flag(mouseX, mouseY));
+    flagEmoji.push(new flag(mouseX, mouseY,3));
   }
 }
 
-function flag(_x, _y) {
+function flag(_x, _y, _maxLife,_flagOveride) {
 
   this.position = createVector(_x, _y);
-  this.country = Math.floor(Math.random() * countries.length);
-  this.speed = createVector(random(-5, 5), random(-5, 5)).limit(3);
+  if(_flagOveride == null){
+    this.country = Math.floor(Math.random() * countries.length);
+  } else {
+    this.country = _flagOveride;
+  }
+
+  this.speed = createVector(random(-3, 3), random(-3, 3)).limit(3);
   this.size = 10;
-  this.age = random(1, 3);
+  this.age = random(_maxLife/3, _maxLife);
   this.flagElement = createP(countries[this.country].flag).position(this.position.x, this.position.y);
 
   this.update = function() {
@@ -257,42 +262,82 @@ function flag(_x, _y) {
 
 function setHTML(_scene) {
   //remove all previous relevant html
-  if(countryTitle != null){
+  if (countryTitle != null) {
     countryTitle.remove();
   }
-  if(countryImg != null){
+  if (countryImg != null) {
     countryImg.remove();
   }
-  if(countryVid != null){
+  if (countryVid != null) {
     countryVid.remove();
   }
-  if(countryDesc != null){
+  if (countryDesc != null) {
     countryDesc.remove();
   }
-  if(countryLastWin != null){
+  if (countryLastWin != null) {
     countryLastWin.remove();
   }
-  if(countryOrder != null){
+  if (countryOrder != null) {
     countryOrder.remove();
   }
-  if(bigButton != null){
+  if (bigButton != null) {
     bigButton.remove();
   }
 
 
   if (_scene == "chooseButton") {
+    startDiv = createDiv('');
+    startDiv.id('startDiv');
+    startDiv.style("text-align","center");
     bigButton = createButton('Choose Country!');
-    bigButton.style("font-size","64px");
+    bigButton.style("font-size", "64px");
+    bigButton.style("font-family", "sans-serif");
+    bigButton.style("align", "center");
+    bigButton.parent('startDiv');
     bigButton.touchStarted(bigButtonHandler);
-    
+
   }
 
   if (_scene == "countryData") {
-     countryTitle = createElement("h1", countries[countryFromCookie].name );
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle.style("font-family", "sans-serif");
+    countryTitle.style("text-align", "center");
+    countryTitle.style("font-size", "64px");
+
   }
 }
 
 function bigButtonHandler() {
-  console.log("test");
   setHTML("countryData");
+  for (var i = 0; i < 300; i++) {
+    flagEmoji.push(new flag(innerWidth / 2, 200,20,countryFromCookie));
+  }
 }
