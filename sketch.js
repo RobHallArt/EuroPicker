@@ -238,7 +238,7 @@ function setup() {
   resetButton.parent('startDiv');
   resetButton.touchStarted(resetButtonHandler);
 
-  for (var i = 0; i < 300; i++) {
+  for (var i = 0; i < 50; i++) {
     flagEmoji.push(new flag(innerWidth / 2, 200,10));
   }
 
@@ -375,7 +375,7 @@ function setHTML(_scene) {
 
 function bigButtonHandler() {
   setHTML("countryData");
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     flagEmoji.push(new flag(innerWidth / 2, 200,20,countryFromCookie));
   }
 }
@@ -384,7 +384,7 @@ function resetButtonHandler() {
   countryFromCookie = Math.floor(Math.random() * 25);
   document.cookie = countryFromCookie;
   setHTML("countryData");
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     flagEmoji.push(new flag(innerWidth / 2, 200,20,countryFromCookie));
   }
 }
