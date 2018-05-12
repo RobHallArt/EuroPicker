@@ -227,7 +227,7 @@ function flag(_x,_y) {
   this.speed = createVector(random(-5, 5),random(-5, 5));
   this.size = 10;
   this.age = 0;
-  this.flagElement = createP(countries[8].flag);
+  this.flagElement = createP(countries[Math.floor(Math.random()*countries.length)].flag);
 
   this.update = function() {
     this.age+=random(0,0.1);
