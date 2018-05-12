@@ -228,6 +228,16 @@ function setup() {
 
   setHTML("chooseButton");
 
+  resetDiv = createDiv('');
+  resetDiv.id('startDiv');
+  resetDiv.style("text-align","center");
+  resetButton = createButton('Reset');
+  resetButton.style("font-size", "24px");
+  resetButton.style("font-family", "sans-serif");
+  resetButton.style("align", "center");
+  resetButton.parent('startDiv');
+  resetButton.touchStarted(resetButtonHandler);
+
   for (var i = 0; i < 300; i++) {
     flagEmoji.push(new flag(innerWidth / 2, 200,10));
   }
@@ -353,6 +363,9 @@ function setHTML(_scene) {
     countryTitle.style("font-family", "sans-serif");
     countryTitle.style("text-align", "center");
     countryTitle.style("font-size", "64px");
+    if(countries[countryFromCookie].desc == "Just english people"){
+      countries[countryFromCookie].desc = "Just " + countries[countryFromCookie].name + " people"
+    }
     countryTitle = createElement("p", countries[countryFromCookie].desc);
     countryTitle.style("font-family", "sans-serif");
     countryTitle.style("text-align", "center");
@@ -361,6 +374,15 @@ function setHTML(_scene) {
 }
 
 function bigButtonHandler() {
+  setHTML("countryData");
+  for (var i = 0; i < 300; i++) {
+    flagEmoji.push(new flag(innerWidth / 2, 200,20,countryFromCookie));
+  }
+}
+
+function resetButtonHandler() {
+  countryFromCookie = Math.floor(Math.random() * 25);
+  document.cookie = countryFromCookie;
   setHTML("countryData");
   for (var i = 0; i < 300; i++) {
     flagEmoji.push(new flag(innerWidth / 2, 200,20,countryFromCookie));
