@@ -335,34 +335,28 @@ function setHTML(_scene) {
     countryTitle.parent('countryDiv');
     countryImg = createImg(countries[countryFromCookie].img);
     countryImg.style("text-align", "center");
+    countryImg.style("max-width", "100%");
     countryImg.parent('countryDiv');
-    countryLastWin = createElement("p", countries[countryFromCookie].lastWin);
+    countryLastWin = createElement("p", "Last Won : " + countries[countryFromCookie].lastWin);
     countryLastWin.style("font-family", "sans-serif");
     countryLastWin.style("text-align", "center");
     countryLastWin.style("font-size", "64px");
     countryLastWin.style("float", "left");
-    countryOrder = createElement("p", countryFromCookie+1);
+    var orderBruteForce = parseInt(countryFromCookie)+1;
+    countryOrder = createElement("p", "Order : " + orderBruteForce);
     countryOrder.style("font-family", "sans-serif");
     countryOrder.style("text-align", "center");
     countryOrder.style("font-size", "64px");
     countryOrder.style("float", "right");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle = createElement("br", "");
+    countryTitle = createElement("h1", countries[countryFromCookie].flag);
     countryTitle.style("font-family", "sans-serif");
     countryTitle.style("text-align", "center");
     countryTitle.style("font-size", "64px");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
+    countryTitle = createElement("p", countries[countryFromCookie].desc);
     countryTitle.style("font-family", "sans-serif");
     countryTitle.style("text-align", "center");
     countryTitle.style("font-size", "64px");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
-    countryTitle.style("font-family", "sans-serif");
-    countryTitle.style("text-align", "center");
-    countryTitle.style("font-size", "64px");
-    countryTitle = createElement("h1", countries[countryFromCookie].name);
-    countryTitle.style("font-family", "sans-serif");
-    countryTitle.style("text-align", "center");
-    countryTitle.style("font-size", "64px");
-
   }
 }
 
