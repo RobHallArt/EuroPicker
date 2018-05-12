@@ -284,7 +284,7 @@ function setHTML(_scene) {
     bigButton = createButton('Choose Country!');
     bigButton.style("font-size","64px");
     bigButton.touchStarted(bigButtonHandler);
-    //bigButton.touchStarted(buttonHandler("bigButton"));
+    
   }
 
   if (_scene == "countryData") {
