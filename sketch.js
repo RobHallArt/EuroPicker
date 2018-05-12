@@ -201,7 +201,7 @@ function setup() {
   }
 
   for(var i = 0; i<100; i++){
-    flagEmoji.push(new flag());
+    flagEmoji.push(new flag(innerWidth/2,innerHeight/2));
   }
 
 }
@@ -213,24 +213,24 @@ function draw() {
   }
 
   for(var i = 0; i < flagEmoji.length; i++){
-    if(flagEmoji[i].position.x<innerWidth){
+    if(flagEmoji[i].age>1){
       flagEmoji[i].kill();
       flagEmoji.splice(i,1);
     }
   }
 }
 
-function flag() {
+function flag(_x,_y) {
 
-  this.position = createVector(width / 2, height / 2);
-  this.country = random(0, countries.length);
-  this.speed = createVector(random(0, 1),random(0, 1));
+  this.position = createVector(_x, _y);
+  this.country = random(0, 25);
+  this.speed = createVector(random(-5, 5),random(-5, 5));
   this.size = 10;
   this.age = 0;
-  this.flagElement = createP(countries[this.country].name);
+  this.flagElement = createP(countries[8].flag);
 
   this.update = function() {
-    this.age+=0.01;
+    this.age+=random(0,0.1);
     this.physics();
     //text(this.position.x,this.position.y,this.size,this.size,countries[this.country].flag);
     this.flagElement.position(this.position.x, this.position.y);
