@@ -200,14 +200,17 @@ function setup() {
     document.cookie = countryFromCookie;
   }
 
+  setHTML("chooseButton");
+
   for (var i = 0; i < 100; i++) {
     flagEmoji.push(new flag(innerWidth / 2, innerHeight / 2));
   }
 
+
+
 }
 
 function draw() {
-
   for (var i = 0; i < flagEmoji.length; i++) {
     flagEmoji[i].update();
   }
@@ -233,7 +236,7 @@ function flag(_x, _y) {
   this.speed = createVector(random(-5, 5), random(-5, 5)).limit(3);
   this.size = 10;
   this.age = random(1, 3);
-  this.flagElement = createP(countries[this.country].flag);
+  this.flagElement = createP(countries[this.country].flag).position(this.position.x, this.position.y);
 
   this.update = function() {
     this.age -= random(0.01, 0.1);
@@ -254,26 +257,29 @@ function flag(_x, _y) {
 
 function setHTML(_scene) {
   //remove all previous relevant html
-  countryTitle.remove();
-  countryImg.remove();
-  countryVid.remove();
-  countryDesc.remove();
-  countryLastWin.remove();
-  countryOrder.remove();
-  bigButton.remove();
+  // countryTitle.remove();
+  // countryImg.remove();
+  // countryVid.remove();
+  // countryDesc.remove();
+  // countryLastWin.remove();
+  // countryOrder.remove();
+  // bigButton.remove();
 
-  if (_scene = "choooseButton") {
-    bigButton.createButton("Choose a Country!");
+  if (_scene == "chooseButton") {
+    bigButton = createButton('Confess');
+    bigButton.style("font-size","64px");
     bigButton.touchStarted(buttonHandler("bigButton"));
-  }
-  if (_scene = "countryData") {
-
+    //bigButton.touchStarted(buttonHandler("bigButton"));
   }
 
+  if (_scene == "countryData") {
+     //countryTitle = createElement("h1").position(10,10);
+  }
 }
 
 function buttonHandler(_button) {
-  if (_button = "bigButton") {
+  if (_button == "bigButton") {
     //trigger other stuff like a waterfall of emoji and HTML switch.
+    setHTML("countryData");
   }
 }
